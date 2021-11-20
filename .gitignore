@@ -1,6 +1,9 @@
 .idea/
 gradle/
 .gradle/
+.metadata
+.settings
+bin
 # Compiled class file
 *.class
 
