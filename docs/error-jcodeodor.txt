@@ -1,0 +1,9 @@
+jawab 2 pertanyaan
+1. error nya dimana?
+Exception in thread "main" java.lang.NullPointerException
+        MetricDetector.compute() -> InputManual.createParserManager() -> ASTParserManager.parse() -> eclipse.jdt.core.dom.ASTParser.createASTs
+
+2. what is exception NullPointerException?
+
+3. what does mean 'exception in thread "main" ' ?
+terjadi error di thread main()
