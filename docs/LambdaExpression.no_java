@@ -1,6 +1,12 @@
-class LambdaExpression{
+class LambdaExpression extends FunctionalExpression implements ReferenceContext, ProblemSeverities{
+/*
+	BlockScope currentScope = null?
+	FlowContext flowContext = null?
+	FlowInfo flowInfo = null?
 
+*/
 	public FlowInfo analyseCode(BlockScope currentScope, FlowContext flowContext, FlowInfo flowInfo){
+
 		if (this.ignoreFurtherInvestigation) {
             return flowInfo;
         } else {
@@ -28,11 +34,25 @@ class LambdaExpression{
                 }
             } else if (currentScope.compilerOptions().isAnnotationBasedNullAnalysisEnabled && lambdaInfo.reachMode() == 0) {
                 Expression expression = (Expression)this.body;
+                // disini NPE nya muncul ! 
+                // line 469 =  this.checkAgainstNullAnnotation...
                 this.checkAgainstNullAnnotation(flowContext, expression, expression.nullStatus(lambdaInfo, flowContext));
+/* 
+berarti 2 kondisi berikut terpenuhi
+1. currentScope.compilerOptions().isAnnotationBasedNullAnalysisEnabled
+2. lambdaInfo.reachMode() == 0
+
+hingga masuk ke 
+Expression expression = (Expression)this.body;
+nah expression nya yang null?
+coba kita langsung pakai saja?
+
+*/
+                
             }
 
             return flowInfo;
         }
 	}
-	
+
 }

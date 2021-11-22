@@ -1,0 +1,12 @@
+Jika 'visitPath = null', maka NPE akan muncul di method 'FileVisitHelper.toArrayString()'
+
+Faktanya, error malah dalam dan muncul hingga ke layer sekian
+	at org.eclipse.jdt.internal.compiler.ast.LambdaExpression.analyseCode(LambdaExpression.java:469)
+
+maka 'visitPath != null'.
+
+# next question 
+
+apakah logic dari LambdaExpression.analyseCode harus open dulu?
+
+open docs/LambdaExpression.no_java

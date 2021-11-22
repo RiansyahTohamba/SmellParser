@@ -1,9 +1,13 @@
 jawab 2 pertanyaan
 1. error nya dimana?
-Exception in thread "main" java.lang.NullPointerException
-        MetricDetector.compute() -> InputManual.createParserManager() -> ASTParserManager.parse() -> eclipse.jdt.core.dom.ASTParser.createASTs
+	langsung loncat ke org.eclipse.jdt.internal.compiler.ast.LambdaExpression.analyseCode(LambdaExpression.java:469)
+	detailnya buka LambdaExpression.no_java
 
-2. what is exception NullPointerException?
+2. what does mean 'exception in thread "main"' ?
+The Exception in thread "main" suggests that this error has occurred in the main thread, the thread which is responsible for running the Java application. 
+This error can occur to any thread, but if it happens in the main thread, then your program will crash.
 
-3. what does mean 'exception in thread "main" ' ?
 terjadi error di thread main()
+
+3. what is exception NullPointerException?
+	error yg muncul karena state/value dari object adalah 'null'
